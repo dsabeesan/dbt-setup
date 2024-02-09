@@ -1,0 +1,55 @@
+DBT INSTALLATION
+
+
+NOTE:Before starting installation you should open the browser SYNC the end point verification and login the gcloud console with e.ID .. close all other browser, open only that gcloud console. 
+Open CMD enter below command to create dbt folder
+
+mkdir dbt
+cd dbt
+python -m venv venv
+cd venv
+cd Scripts
+activate.bat
+pip3 install dbt-bigquery
+
+After installation of dbt-bigquery follow below commands
+
+
+cd..
+cd..
+
+make sure that you are in dbt directory in CMD before going to next step
+
+
+dbt init --profiles-dir dbtprj 
+dbtsubprj2 
+1
+1
+dmn01-rsksoi-bld-01-2017 
+
+After giving project ID stop here and open C drive. GOTO Users - your empid folder - open dbt folder - there you can find "dbtprj" folder inside dbtprj paste project.yml file and come out paste dbt_project in dbt folder. 
+
+Now back to your empid folder and create folder and name as ".dbt" and open the folder and paste the project.yml file
+
+now come to CMD and continue with giving dataset name
+
+
+
+dmn01_rsk_cog_raw
+1
+ENTER
+2
+ 
+gcloud config set project dmn01-rsksoi-bld-01-2017
+gcloud auth application-default login 
+
+
+dbt debug
+ 
+After dbt debug everything should be green..... 
+
+
+
+
+##########if your getting SSL verification disabled error, follow the this command: git config --global http.sslVerify false
+dbt debug
