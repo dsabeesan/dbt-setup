@@ -53,3 +53,23 @@ After dbt debug everything should be green.....
 
 ##########if your getting SSL verification disabled error, follow the this command: git config --global http.sslVerify false
 dbt debug
+-----------------------
+What is Collateral?
+
+Collateral is something valuable that a borrower promises to give to a lender when they want a loan. It's like a guarantee that if the borrower can't pay back the loan, the lender can take the collateral instead. This helps the lender feel more secure about lending money.
+
+Different loans need different types of collateral. For example, if you want a loan to buy a house, the lender might ask for the house itself as collateral. If it's a car loan, they might want the car to be the collateral.
+
+Role of The Collateral Data Product
+
+This tool offers a consolidated view of the collateral that has been approved as a requirement for supporting a lending proposal. This collateral typically includes non-financial assets like properties, debentures, and guarantees associated with any credit proposal request. It excludes financial instruments such as derivatives.
+
+Currently, Collateral data is spread across different source systems within the bank, namely CMS and SR&V. The aim of creating the Collateral Data Product is to streamline this information, bringing it together into a single location.So, the idea is to make things simpler and more efficient by creating a Collateral Data Product that brings all this information into one easy-to-use location.
+
+Source Systems of Collateral Data Product
+
+CMS acts as a centralized repository where all the important details regarding collateral are stored. Essentially, it provides a single, comprehensive view of the collateral information associated with the bank's commercial customers.
+CMS source System that links up with other programs in the credit risk system. This connection helps make sure that all the details about collateral are right when making decisions about loans. 
+For phase 1, there are eight tables under CMS. The source system has two parts: BQ Raw Dataset (dmn01_rsk_cms_raw) and BQ Staging Dataset (dmn01_rsk_cms_staging).
+
+Now, there's another system called SR&V, which stands for Securities Recording & Viewing System. This system is responsible for keeping detailed records of collateral that supports lending in the Commercial division. One of the critical uses of the collateral data within SR&V is to contribute to the calculation of RWA (Risk-Weighted Assets) for lending. This ensures that the bank accurately assesses and manages the risks associated with lending, making the entire lending process more transparent and reliable.
