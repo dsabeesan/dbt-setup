@@ -54,3 +54,45 @@ After dbt debug everything should be green.....
 ##########if your getting SSL verification disabled error, follow the this command: git config --global http.sslVerify false
 dbt debug
 -----------------------
+
+
+
+
+
+This image represents a data transformation workflow in Pentaho Data Integration (PDI), also known as Kettle. Here's a detailed step-by-step explanation of each component and the flow:
+
+1. **Load File Content in Memory**: This step reads the content of a file into memory. The file's data will be used in subsequent steps.
+
+2. **Dynamic SQL Row**: This step likely involves executing a SQL query dynamically. The results of this query are used in the transformation process.
+
+3. **Detect Empty Stream**: This step checks if the data stream coming from the previous steps is empty. If the stream is empty, it might trigger an error or handle the empty case in a specific way.
+
+4. **Add Header**: This step adds a header to the data stream. A header usually contains column names or metadata that describe the data structure.
+
+5. **Select Values Replace (with space in the stream)**: This step selects specific values from the data stream and replaces certain characters with spaces. This is likely used for data cleansing or formatting.
+
+6. **Generate RC6 GNC TRIGGER FILE**: This step generates a trigger file named "RC6_GNC_TRIGGER_FILE". A trigger file is typically used to signal that a particular process has completed and another process can begin.
+
+7. **Generate Trigger File with Header**: Similar to the previous step, this generates a trigger file but includes a header in the file.
+
+8. **Get System Info**: This step retrieves system information such as the current date, time, or other environment-specific data that might be needed in the transformation.
+
+9. **Modified JavaScript Value**: This step executes a JavaScript script to modify or compute new values based on the existing data. The script can perform various operations such as calculations, data manipulation, or conditional logic.
+
+10. **Group By for Finding Count**: This step groups the data by specific columns and calculates counts or aggregates. Grouping is useful for summarizing data and identifying patterns or trends.
+
+11. **Set Variables**: This step sets variables that can be used throughout the transformation. Variables store values that can be referenced in different steps, making the transformation more dynamic and flexible.
+
+12. **Set Variables 2**: This is another step for setting variables, possibly to separate different sets of variables or to perform additional variable setting after some intermediate processing.
+
+### Flow Explanation
+
+- The flow starts by loading the file content into memory and then executing a dynamic SQL query to get additional data.
+- The data stream is checked for emptiness, and a header is added to the stream.
+- Specific values in the stream are selected and formatted by replacing characters with spaces.
+- A trigger file is generated, indicating the completion of the data processing.
+- System information is retrieved, and JavaScript is used to modify the data.
+- The data is grouped to find counts, and variables are set to store important values or results.
+- Finally, additional variables are set, likely to prepare the data for the next steps or for final output.
+
+This workflow represents a typical ETL (Extract, Transform, Load) process where data is read, processed, and then written to a file or database.
